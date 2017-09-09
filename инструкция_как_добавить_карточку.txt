@@ -1,0 +1,59 @@
+Надо добавить строку, а внутрь неё уже добавлять карточку.
+Пустую карточку обязательно добавлять - иначе содержимое веб-страницы будет делиться не на 3, а на 4 части, и каждая из
+карточек будеть занимать 1/3 а не 1/4 ширины страницы.
+
+<div class="uk-container">
+    <div class="uk-child-width-expand@s uk-text-center cards-block" id="hidden-row" uk-grid>
+        <!--Одна карточка-->
+        <div>
+            <div class="uk-card uk-card-default uk-card-body product">
+                <div class="product-photo">
+                    <img src="../images/body/tarelka.png" />
+                </div>
+                <div class="desc">
+                    комплект триколор full hd<br/> на 2 телевизора
+                </div>
+                <div class="price">
+                    5 500 <span>руб</span>
+                </div>
+                <div id="more">
+                    <a href="#modal" id="get_more" class="trigger">подробнее</a>
+                </div>
+                <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+            </div>
+        </div>
+
+        
+
+        
+
+        
+        <div>
+        	<!--Пустая карточка-->
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Cache-Control" content="private">
+		<title></title>
+        
+        
+        <link rel="stylesheet" href="assets/css/uikit.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/jquery.bxslider.css">
+        
+
+        
+        
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/uikit.min.js"></script>
+        <script src="assets/js/uikit-icons.js"></script>
+        <script src="assets/js/jquery.fancybox.js"></script>
+        <script src="assets/js/jquery.bxslider.js"></script>
+        
+        <script>
+        	$(document).ready(function(){
+                
+        		slider = $('.bxslider').bxSlider({
+				  pagerCustom: '#bx-pager'
+				});
+
+        		$('.trigger').fancybox();
+
+        		$('.trigger').on('click',function(){
+        			slider.reloadSlider();
+        		});
+
+
+
+                //Подгрузка дополнительных блоков
+                /*$('.wrapper a:last, .wrapper #load a').click(function(){ 
+                    $.get('row.html', function(data){
+                        //$(data).insertBefore('.wrapper .uk-container:last').find('#hidden-row').css({"display":"flex"});
+                        //$(data).insertBefore('.wrapper #load').find('#hidden-row').css({"display":"flex"});
+                        $(data).insertBefore('.wrapper #load');
+                        
+                        $(this).fancybox();//Это делаем чтоб вообще открывался fancybox в добавленных блоках
+                        //slider.reloadSlider();
+
+                    });      
+                });*/
+				
+				$('.wrapper').on('click','a:last, .load a.trigger',function(){
+					$.get('row.html', function(data){
+
+                        $(data).insertBefore('.wrapper .load');
+                        $('.uk-container:last .trigger').fancybox();//инициализация fancybox для вновь созданных блоков
+                        $('.uk-container:last .trigger').on('click',function(){
+                            slider.reloadSlider();
+                        });
+
+                    });
+				});
+                
+                
+                $('#modal').on('click','a.myButton',function(){
+                    //$('#modal').fadeOut();
+                    $('.fancybox-container').css({"display":"none"});
+                    $('#modal1').fadeIn();
+                });
+                
+        		
+                
+        		$('form').submit(function(e){
+        			var $form = $(this);
+
+        			$.ajax({
+        				type: $form.attr('method'),
+        				url: $form.attr('action'),
+        				data: $form.serialize()
+        			}).done(function(result){
+        				alert('Сообщение успешно отправлено!');
+        				//Тут надо сделать так, чтобы модальное окно само закрывалось после отправки сообщения
+        				$('#modal1').fadeOut('slow', function(){
+        					
+        				});
+
+        			}).fail(function(result){
+        				alert('Ошибка при отправке сообщения!' + result);
+        			});
+
+        			//отмена действия по умолчанию для кнопки submit
+        			e.preventDefault();
+        		});
+
+        		//Делаем поле телефона обязательным для заполнения
+        		$('input[name=phone]').on('input keyup',function(e){
+        			if($(this).val()=='')
+        				$('form input[type=submit]').prop('disabled',true);
+        			else
+        				$('form input[type=submit]').prop('disabled',false);	
+        		});
+
+
+        		/*
+        		if($('#modal1 .uk-close svg').length > 1)
+        		{
+        			$('#modal1 .uk-close svg:last').remove();	
+        		}
+
+        		if($('#modal1 form .uk-margin-small .uk-card .uk-margin .uk-inline span svg').length > 1)
+        		{
+        			//alert('test')
+        			$('#modal1 form .uk-margin-small .uk-card .uk-margin .uk-inline span svg:last').remove();	
+        		}
+        		*/
+
+        	});
+
+			
+        </script>
+</head>
+<body>
+
+
+<div>
+	<div class="uk-section uk-section-xxsmall uk-box-shadow-large uk-card uk-card-default uk-sticky uk-sticky-fixed" style="z-index: 980; position: fixed; top: 0px; width: 1902px;" uk-sticky="bottom: #offset,true">
+        <div class="uk-container uk-container-lsmall">
+        <nav class="uk-margin uk-navbar" uk-navbar="">
+            <div class="uk-navbar-left">
+                <a class="uk-navbar-item uk-logo" href="#">
+                <img class="uk-margin-small-right" src="images/svg/logo-new.png"> </a>
+                <ul class="uk-navbar-nav uk-iconnav">
+                    <li><a href="#"><span class="uk-icon uk-margin-small-right" href="#"></span>Главная</a></li>
+                      <li><a href="#action"><span class="uk-icon uk-margin-small-right" href=""></span>Акции по обмену </a></li>
+                      <li><a href="#obmen"><span class="uk-icon uk-margin-small-right" href="#"></span>Пункты обмена</a></li>
+                </ul>
+                </div>
+                <div class="uk-navbar-right">
+                  <div class="uk-navbar-item"> 8(3532)30-77-20</div>
+                  <button class="uk-button uk-button-default uk-button-hover callback-btn" uk-toggle="target:#modal1">ЗАКАЗАТЬ ЗВОНОК</button>
+                  
+                </div>
+
+        </nav>
+
+  		</div>
+    </div>
+
+    
+    <div class="uk-container">
+	    <button class="change"><img src="images/body/change.png" alt=""/><div class="txt">я хочу обменять старый триколор на новый</div>
+	    </button>
+	    <button class="buy"><img src="images/body/buy.png" alt=""/><div class="txt">я хочу купить триколор</div></button>
+    </div>
+    
+
+
+    
+    <div class="wrapper">
+        <div class="uk-container">
+        <div class="uk-child-width-expand@s uk-text-center cards-block" uk-grid>
+    	    <div>
+    	        <div class="uk-card uk-card-default uk-card-body product">
+    		        <div class="product-photo">
+    		        	<img src="images/body/tarelka.png" />
+    		        </div>
+    		        <div class="desc">
+    		        	Спутниковый ресивер-клиент Триколор ТВ GS-С5911<br/>
+   		          </div>
+    		        <div class="price">
+    		        	3 000 <span>руб</span>
+    		        </div>
+
+
+
+    		        <div class="more">
+    		        	<a href="#modal" class="trigger">подробнее</a>
+    		        </div>
+
+
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+    	        </div>
+    	    </div>
+    	    <div>
+    	        <div class="uk-card uk-card-default uk-card-body product">
+    		        <div class="product-photo">
+    		        	<img src="images/body/tarelka.png" />
+    		        </div>
+    		        <div class="desc">
+    		        	Спутниковый ресивер Триколор ТВ GS B-521 L + смарт карта на 31 день<br/> 
+    		        	
+   		          </div>
+    		        <div class="price">
+    		        	6 500 <span>руб</span>
+    		        </div>
+    		        <div class="more">
+    		        	<a href="#modal" class="trigger">подробнее</a>
+    		        </div>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+    	        </div>
+    	    </div>
+    	    <div>
+    	        <div class="uk-card uk-card-default uk-card-body product">
+    		        <div class="product-photo">
+    		        	<img src="images/body/tarelka.png" />
+    		        </div>
+    		        <div class="desc">
+    		        	Спутниковый двухтюнерный ресивер  Триколор ТВ GS B-532 M + смарт карта 31 день<br/>
+   		          </div>
+    		        <div class="price">
+    		        	6 200 <span>руб</span>
+    		        </div>
+    		        <div class="more">
+    		        	<a href="#modal"  class="trigger">подробнее</a>
+    		        </div>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+    	        </div>
+    	    </div>
+    	    <div>
+    	        <div class="uk-card uk-card-default uk-card-body product">
+    		        <div class="product-photo">
+    		        	<img src="images/body/tarelka.png" />
+    		        </div>
+    		        <div class="desc">Спутниковый двухтюнерный ресивер  Триколор ТВ GS B-532 M + смарт карта на 7 дней<br/>
+   		          </div>
+    		        <div class="price">
+    		        	5 700 <span>руб</span>
+    		        </div>
+    		        <div class="more">
+    		        	<a href="#modal"  class="trigger">подробнее</a>
+    		        </div>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+    	        </div>
+    	    </div>
+
+    	</div>
+    	</div>
+
+    	<div class="uk-container">
+    	<div class="uk-child-width-expand@s uk-text-center cards-block" uk-grid>
+    		<div>
+    	        <div class="uk-card uk-card-default uk-card-body product">
+    		        <div class="product-photo">
+    		        	<img src="images/body/tarelka.png" />
+    		        </div>
+    		        <div class="desc">
+    		        	Комплект в рассрочку &quot;Старт 0&quot;<br/>
+   		          </div>
+    		        <div class="price">
+    		        	700 <span>руб</span>/мес
+    		        </div>
+    		        <div class="more">
+    		        	<a href="#modal"  class="trigger">подробнее</a>
+    		        </div>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+    	        </div>
+    	    </div>
+    	    <div>
+    	        <div class="uk-card uk-card-default uk-card-body product">
+    		        <div class="product-photo">
+    		        	<img src="images/body/tarelka.png" />
+    		        </div>
+    		        <div class="desc">Комплект для двух телевизоров + смарт-карта SC на 31 день<br>
+   		             </div>
+    		        <div class="price">
+    		        	9 000 <span>руб</span>
+    		        </div>
+    		        <div class="more">
+    		        	<a href="#modal"  class="trigger">подробнее</a>
+    		        </div>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+    	        </div>
+    	    </div>
+    	    <div>
+    	        <div class="uk-card uk-card-default uk-card-body product">
+    		        <div class="product-photo">
+    		        	<img src="images/body/tarelka.png" />
+    		        </div>
+    		        <div class="desc">
+    		        	Комплект для двух телевизоров + скретч-карта SC на 7 дней<br>
+    		        	</div>
+    		        <div class="price">
+    		        	9 000 <span>руб</span>
+    		        </div>
+    		        <div class="more">
+    		        	<a href="#modal"  class="trigger">подробнее</a>
+    		        </div>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+    	        </div>
+    	    </div>
+    	    <div>
+    	        <div class="uk-card uk-card-default uk-card-body product">
+    		        <div class="product-photo">
+    		        	<img src="images/body/tarelka.png" />
+    		        </div>
+    		        <div class="desc">
+    		        	CAM модуль Триколор CI+, в комплекта смарт-карта<br/>
+   		          </div>
+    		        <div class="price">
+    		        	4 900 <span>руб</span>
+    		        </div>
+    		        <div class="more">
+    		        	<a href="#modal"  class="trigger">подробнее</a>
+    		        </div>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+    	        </div>
+    	    </div>
+
+    	    
+    	</div>
+    	</div>
+
+        <div class="load">
+            <a href="javascript:void(0);">Загрузить еще</a>
+        </div>
+
+	</div>
+
+	<div id="modal">
+		
+		<div class="slider">
+			<ul class="bxslider">
+			  <li><img src="images/body/tarelka_big.png" /></li>
+			  <li><img src="images/body/tarelka_big.png" /></li>
+			  <li><img src="images/body/tarelka_big.png" /></li>
+			</ul>
+
+			<div id="bx-pager">
+			  <a data-slide-index="0" href=""><img src="images/body/tarelka.png" /></a>
+			  <a data-slide-index="1" href=""><img src="images/body/tarelka.png" /></a>
+			  <a data-slide-index="2" href=""><img src="images/body/tarelka.png" /></a>
+			</div>
+		</div>
+
+		
+
+		<div class="description">
+			<h2>
+				комплект триколор full hd<br/> на 2 телевизора
+			</h2>
+			<div class="price_stock">
+				<div class="price">
+					5 500 <span>руб</span>
+				</div>
+				<div class="in_stock">
+					в наличии
+				</div>
+			</div>
+			<a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+			<div class="opisanie">
+				<span>Описание</span>
+				<p>
+					Комплект для независимого просмотра ТРИКОЛОР ТВ разных телеканалов на двух телевизорах с использованием одной смарт-карты. GS C591 («клиент») подключается к GS E501 («сервер») по сети Ethernet, для этого необходимо проложить UTP или FTP кабель от приемника-серверадо приемника-клиента.
+				</p>
+			</div>
+			<div class="suite">
+				<span>Комплектность</span>
+				<ul>
+					<li>Антенна спутниковая 0,55</li>
+					<li>Конвертер круговой на 2вых.</li>
+					<li>Приемник сервер  GS E 501</li>
+					<li>Приемник клиент  GS C 591</li>
+					<li>Карта доступа </li>
+					<li>Пульт ДУ 2шт</li>
+					<li>Элементы питания ААА 4шт</li>
+					
+				</ul>
+			</div>
+			<div class="callback-block">
+				<div class="help">
+					ПОЗВОНИТЕ НАШЕМУ КОНСУЛЬТАНТУ
+					И МЫ ПОМОЖЕМ ВАМ ВЫБРАТЬ
+					ОБОРУДОВАНИЕ "ТРИКОЛОР ТВ"
+				</div>
+				<div class="phone">
+					8(846) 993-80-83
+				</div>
+				<div class="get-cllback">
+					ЗАКАЗАТЬ ЗВОНОК
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+<!--Окно заказа обратного звонка-->
+<div id="modal1" uk-modal="" class="uk-modal">
+	  <div class="uk-modal-dialog uk-modal-body">
+	      <button class="uk-modal-close-default uk-close uk-icon" type="button" uk-close="">
+	      
+	      </button>
+	      <div class="uk-modal-header">
+	          <h2 class="uk-modal-title">Оставить заявку</h2>
+	      </div>
+
+	      <form method="post" action="../птичка/send.php">
+	          <div class="uk-modal-body">
+	            
+	              <div class="uk-margin-small uk-grid-small uk-child-width-1-2 uk-grid" uk-grid="">
+						<div class="uk-card uk-first-column">
+	                  	<div class="uk-margin">
+	                        <div class="uk-inline">
+	                        	<label class="uk-form-label" for="name"></label>
+	                        	<span class="uk-form-icon uk-icon" uk-icon="icon: user">
+
+	                        	
+	                        	</span>
+	                        	<input id="Имя" class="uk-input" name="name" placeholder="Имя..." type="text" autofocus="">
+	                        </div>
+	                    </div>
+	                <div class="uk-margin">
+	                    <div class="uk-inline">
+	                    	<label class="uk-form-label" for="phone"></label>
+	                    	<span class="uk-form-icon uk-icon" uk-icon="icon: phone">
+	                    	</span>
+	                    	<input id="Телефон" class="uk-input" name="phone" placeholder="Телефон..." type="Phone" autofocus="">
+	                    </div>
+	                </div>
+	                <div class="uk-margin">
+	                    <div class="uk-inline">
+	                        <label class="uk-form-label" for="email"></label>
+	                        <span class="uk-form-icon uk-icon" uk-icon="icon: mail">
+	                        </span>
+
+	                        <input id="email" class="uk-input" name="email" placeholder="Email..." type="text" autofocus="">
+	                    </div>
+	                </div>
+
+	              	</div>
+	                <div class="uk-card">
+	                	<div class="uk-margin">
+	                        <div class="uk-inline">
+	                            <textarea class="uk-textarea uk-form-width-large" rows="6" type="message" name="message" placeholder="Напишите..."></textarea>
+	                        </div>
+	                    </div>
+	  				</div>
+
+						</div>
+
+	          </div><!--uk-modal-body-->
+	          <div class="uk-modal-footer uk-text-right">
+	              <button class="uk-button uk-button-default uk-modal-close" type="button">Закрыть</button>
+	              <input class="uk-button uk-button-primary" type="submit" value="Отправить" disabled="">
+	          </div>
+	      </form>
+	  </div>
+</div>
+
+<!--Yandex.Metrika counter-->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter43918984 = new Ya.Metrika({
+                    id:43918984,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    ecommerce:"dataLayer"
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+
+<noscript>&lt;div&gt;&lt;img src="https://mc.yandex.ru/watch/43918984" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;</noscript>
+
+
+<!--Yandex.Metrika counter-->
+<div id="window-resizer-tooltip" style="display: none;"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1928</span> x <span class="tooltipHeight" id="winHeight">1057</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1918</span> x <span class="tooltipHeight" id="vpHeight">507</span></div>
+
+</body>
+</html>

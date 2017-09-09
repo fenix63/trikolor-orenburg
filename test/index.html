@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.2.0.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+            $('.wrapper a').click(function(){
+                var content;
+                //$(this).fadeOut();
+                $.get('add.html', function(data){
+                    content = data;
+                    $('.wrapper').append(content);
+                });      
+            });        
+    });
+        
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="block">
+            Данные
+        </div>
+        <div class="block">
+            Данные
+        </div>
+        <a href="#">Подгрузить данные</a>
+    </div>
+    
+</body>
+</html>

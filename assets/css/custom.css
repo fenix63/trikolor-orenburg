@@ -1,0 +1,328 @@
+.cards{
+    display: none;
+}
+
+
+.uk-section-default2 h1{
+	text-align:center;
+	color: #fff;
+}
+
+.address .add{
+	float:left;
+	width: 50%;
+	
+}
+
+.address .add:nth-child(3), .address .add:nth-child(4){
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.manager img{
+	margin-right: -120px;
+}
+
+.callback-btn{
+	background-color: #e83629;
+    color: #fff;
+}
+
+.callback-btn:hover{
+	background-color: #fa4a3d;
+	color:#fff;
+}
+
+
+.change,.buy{
+	width:49%;
+	margin-top:60px;
+	text-transform: uppercase;
+	text-align:center;
+	color:#005ca9;
+	border: 1px solid #005ca9;
+	border-radius: 4px;
+	cursor:pointer;
+	font-weight: bold;
+}
+
+.change img, .buy img{
+	float:left;
+	width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 9px;
+}
+
+.change .txt{
+	padding: 19px 130px 10px 149px;
+}
+
+.buy .txt{    
+	padding: 19px 130px 26px 149px;
+}
+
+
+
+.change{
+	background: linear-gradient(to top, #86cae3, #ffffff);
+}
+
+.buy,.change{
+	background: linear-gradient(to top, #e2e1e1, #ffffff);
+}
+
+.buy:hover,.change:hover{
+	background: linear-gradient(to top, #86cae3, #ffffff);
+}
+
+
+.cards-block{
+	margin-top: 100px;
+}
+
+.product-photo
+{
+	border-bottom: 1px solid #57bded;
+	height:260px;
+
+}
+
+.product-desc{
+	height:210px;
+}
+
+
+
+.desc{
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#more a, .more a{
+	text-decoration: underline;
+}
+
+.center{
+	margin-top: 30px;
+}
+
+
+.cards-block:first-child{
+    margin-top: 100px;
+}
+
+.cards-block .price, #modal .description .price, #modal2 .description .price, #modal3 .description .price, #modal4 .description .price, #modal5 .description .price, #modal6 .description .price, #modal7 .description .price, #modal8 .description .price{
+	font-family: Arial;
+	font-size: 30px;
+}
+
+.cards-block .price span, #modal .description .price span, #modal2 .description .price span, #modal3 .description .price span, #modal4 .description .price span, #modal5 .description .price span, #modal6 .description .price span, #modal7 .description .price span, #modal8 .description .price span{
+	font-size: 25px;
+}
+
+
+.cards-block .product{
+    border: 1px solid #59c5f7 !important;
+    padding: 0;
+}
+
+.cards-block .desc{
+	font-size: 15px;
+	margin-top:18px;
+}
+
+.cards-block .product-photo img{
+	width: 100%;
+}
+
+.cards-block #more a, .cards-block .more a{
+	font-family: Arial;
+	font-size: 15px;
+	float: left;
+	color:#000;
+	margin-left:35px;
+	margin-top:19px;
+}
+
+.cards-block #more .myButton, .cards-block .more .myButton{
+	font-family: Arial;
+	font-size: 15px;
+}
+
+#get_more{
+    color:#000;
+}
+
+#modal, #modal2, #modal3, #modal4, #modal5, #modal6, #modal7, #modal8{
+    display:none;
+    max-width:70%;
+}
+
+#modal .slider, #modal2 .slider, #modal3 .slider, #modal4 .slider, #modal5 .slider, #modal6 .slider, #modal7 .slider, #modal8 .slider{
+    width: 33%;
+    float: left;
+}
+
+
+#modal .description, #modal2 .description, #modal3 .description, #modal4 .description, #modal5 .description, #modal6 .description, #modal7 .description,
+#modal8 .description{
+    width: 48%;
+    float: left;
+    margin-left:60px;
+}
+
+#modal .description h2, #modal2 .description h2, #modal3 .description h2, #modal4 .description h2, #modal5 .description h2, #modal6 .description h2,
+#modal7 .description h2, #modal8 .description h2{
+    text-transform: uppercase;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#modal .description .price, #modal2 .description .price, #modal3 .description .price, #modal4 .description .price, #modal5 .description .price, #modal6 .description .price, #modal7 .description .price, #modal8 .description .price{
+	float:left;
+}
+
+#modal .description .in_stock, #modal2 .description .in_stock, #modal3 .description .in_stock, #modal4 .description .in_stock, #modal5 .description .in_stock, #modal6 .description .in_stock, #modal7 .description .in_stock, #modal8 .description .in_stock{
+	clear:both;
+	color:#3d71b0;
+}
+
+#modal .opisanie, #modal2 .opisanie, #modal3 .opisanie, #modal4 .opisanie, #modal5 .opisanie, #modal6 .opisanie, #modal7 .opisanie, #modal8 .opisanie{
+	clear:both;
+}
+
+#modal .price_stock, #modal2 .price_stock, #modal3 .price_stock, #modal4 .price_stock, #modal5 .price_stock, #modal6 .price_stock, #modal7 .price_stock,
+#modal8 .price_stock{
+	float:left;
+}
+
+#modal .description a, #modal2 .description a, #modal3 .description a, #modal4 .description a, #modal5 .description a, #modal6 .description a,
+#modal7 .description a, #modal8 .description a{
+	margin-left:76px;
+}
+
+#modal .description .opisanie, #modal2 .description .opisanie, #modal3 .description .opisanie, #modal4 .description .opisanie, #modal5 .description .opisanie,
+#modal6 .description .opisanie, #modal7 .description .opisanie, #modal8 .description .opisanie{
+	width: 77%;
+	text-align: justify;
+}
+
+#modal .description ul, #modal2 .description ul, #modal3 .description ul, #modal4 .description ul, #modal5 .description ul, #modal6 .description ul,
+#modal7 .description ul, #modal8 .description ul{
+	list-style:none;
+}
+
+#modal .description ul li:before, #modal2 .description ul li:before, #modal3 .description ul li:before, #modal4 .description ul li:before, #modal5 .description ul li:before, #modal6 .description ul li:before, #modal7 .description ul li:before, #modal8 .description ul li:before{
+	content:"-";
+	position: relative;
+	left:-5px;
+}
+
+#modal .description .callback-block, #modal2 .description .callback-block, #modal3 .description .callback-block, #modal4 .description .callback-block, #modal5 .description .callback-block, #modal6 .description .callback-block, #modal7 .description .callback-block, #modal8 .description .callback-block{
+	width: 47%;
+	text-transform: uppercase;
+	border-left: 11px solid #67b7f5;
+	padding-left: 16px;
+	font-family: Arial;
+	font-size:15px;
+}
+
+#modal .description .callback-block .help, #modal2 .description .callback-block .help, #modal3 .description .callback-block .help, #modal4 .description .callback-block .help, #modal5 .description .callback-block .help, #modal6 .description .callback-block .help, #modal7 .description .callback-block .help, #modal8 .description .callback-block .help{
+	font-size:15px;
+}
+
+#modal .description .callback-block .phone, #modal2 .description .callback-block .phone, #modal3 .description .callback-block .phone, #modal4 .description
+.callback-block .phone, #modal5 .description .callback-block .phone, #modal6 .description .callback-block .phone, #modal7 .description .callback-block .phone,
+#modal8 .description .callback-block .phone{
+	font-size:25px;
+}
+
+#hidden-row{
+    display:none;
+}
+
+
+
+
+.myButton {
+    /*-moz-box-shadow:inset 0px 39px 0px -24px #CA2424;
+    -webkit-box-shadow:inset 0px 39px 0px -24px #CA2424;
+    box-shadow:inset 0px 39px 0px -24px #CA2424;*/
+    background-color:#e83629;
+    /*background:linear-gradient(to bottom, #da1d1d, #910b0b);*/
+    
+    
+    border:1px solid #e5e5e5;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    padding:14px 37px 14px 41px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #f51c0c;
+    text-transform: uppercase;
+    
+    /*margin-right: 30px;
+    margin-bottom: 5px !important;*/
+    position: absolute;
+    bottom:11px;
+    right:60px;
+
+
+}
+.myButton:hover {
+    background-color:#fa4a3d;
+    text-decoration: none;
+    color:#fff;
+}
+
+.description .myButton{
+	float: left;
+}
+
+/*.myButton:active {
+    position:relative;
+    top:1px;
+}*/
+
+
+
+#bx-pager a img{
+	width:30%;
+	border: 1px solid #dedbdb;
+}
+
+#bx-pager a{
+	padding-left:16px;
+}
+
+#bx-pager a:first-child{
+	padding-left:0px;
+}
+
+.bx-wrapper img{
+	padding-left: 90px;
+}
+
+#load,.load{
+    text-align: center;
+}
+
+html{
+    overflow-y: scroll !important;
+}
+
+button.uk-modal-close, input[type="submit"]{
+    float: left;
+}
+
+.g-recaptcha{
+    /*float: left;*/
+}
+
+.grecaptcha-badge{
+	display:none;
+}
