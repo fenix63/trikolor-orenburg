@@ -16,6 +16,7 @@
         <script src="assets/js/jquery.fancybox.js"></script>
         <script src="assets/js/jquery.bxslider.js"></script>
         <script src="assets/js/prod_desc_fancy.js"></script>
+        <script src="assets/js/topscroll.js"></script>
 
 
         <script>
@@ -41,6 +42,10 @@
 
 
                 
+                $('.top-bxslider').bxSlider({
+                    auto: true
+                });
+            
 
                 //Вызов модального окна для детального просмотра товара
                 // $('.trigger').fancybox({
@@ -105,11 +110,16 @@
 
 
                 // //Вызов формы обратного звонка
-                // $('#modal').on('click','a.myButton',function(){
+                $('#modal').on('click','a.myButton',function(){
 
-                //     $('.fancybox-container').css({"display":"none"});
-                //     $('#modal1').fadeIn();
-                // });
+                    console.log('test modal');
+                    //$('.fancybox-container').css({"display":"none"});
+                    // console.log('test 0');
+                    // $(this).css({"display":"none"});
+                    // console.log('test 1');
+                    // $('#modal1').fadeIn();
+                    // console.log('test 2');
+                });
 
 
 
@@ -209,7 +219,13 @@
 -->
         </style>
 </head>
-    <body>
+    <body id="top">
+    
+    
+
+
+
+
       <div>
         <div class="uk-section uk-section-xxsmall uk-box-shadow-large uk-card uk-card-default  " style="z-index: 980;" uk-sticky="bottom: #offset,true">
         <div class="uk-container uk-container-lsmall">
@@ -303,12 +319,31 @@
       </div>
 
 
-      <div class="uk-section uk-section-default2">
+  <div class="uk-section uk-section-default2 blue-block">
 
-      <div class="uk-container">
+      <div class="uk-container ">
       	<h1>ФИРМЕННЫЙ САЛОН-МАГАЗИН "ТРИКОЛОР ТВ"</h1>
       </div>
   </div>
+
+  <!--Кнопка "Наверх"-->
+    <p id="back-top">
+        <a href="#top"><span></span>Наверх</a>
+    </p>
+
+<!--Тут будет слайдер-->
+<div class="uk-section uk-section-default">
+    <div class="uk-container">
+        <ul class="top-bxslider">
+          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="http://placehold.it/1200x310" /></a></li>
+          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="http://placehold.it/1200x310" /></a></li>
+          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="http://placehold.it/1200x310" /></a></li>
+          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="http://placehold.it/1200x310" /></a></li>
+        </ul>
+    </div>
+</div>
+
+
 
 <div class="uk-section uk-section-default">
 
@@ -381,8 +416,9 @@
     	    		        <div class="price">
     	    		        	3 900 <span>руб</span>
     	    		        </div>
-    	    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
-                            <a href="#modal"  class="trigger read_more">подробнее</a>
+    	    		        <a href="#modal"  class="trigger read_more">подробнее</a>
+                            <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+                            
         		        </div>
 
         	        </div>
@@ -398,8 +434,9 @@
 	   		          	</div>
 	    		        <div class="price">3 900 <span>руб</span>
 	    		        </div>
-	    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
                         <a href="#modal2"  class="trigger read_more">подробнее</a>
+	    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+                        
     		        </div>
 
 
@@ -421,8 +458,9 @@
 	    		        	6 200 <span>руб</span>
 	    		        </div>
 	    		        
-	    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
                         <a href="#modal3"  class="trigger read_more">подробнее</a>
+	    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+                        
     		        </div>
 
 
@@ -445,8 +483,9 @@
 	    		        <div class="more">
 	    		        	
                         </div>
-	    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
                         <a href="#modal4"  class="trigger read_more">подробнее</a>
+	    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+                        
     		        </div>
 
     	        </div>
@@ -473,8 +512,9 @@
 	    		        <div class="more">
 	    		        	
                         </div>
-	    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
                         <a href="#modal5"  class="trigger read_more">подробнее</a>
+	    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+                        
     		        </div>
 
     	        </div>
@@ -495,8 +535,9 @@
     		        <div class="more">
     		        	
                     </div>
-    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
                     <a href="#modal6"  class="trigger read_more">подробнее</a>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+                    
     		        </div>
 
     	        </div>
@@ -516,8 +557,9 @@
     		        <div class="more">
     		        	
                     </div>
-    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
                     <a href="#modal7"  class="trigger read_more">подробнее</a>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+                    
     		        </div>
 
     	        </div>
@@ -536,8 +578,9 @@
     		        	4 700 <span>руб</span>
     		        </div>
     		        
-    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
                     <a href="#modal8"  class="trigger read_more">подробнее</a>
+    		        <a href="#" class="myButton" uk-toggle="target:#modal1">купить</a>
+                    
     		        </div>
 
     	        </div>

@@ -14,6 +14,16 @@
 	
 }
 
+.blue-block{
+    padding: 30px !important;
+}
+
+.bx-wrapper{
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border:0;
+}
+
 .address .add:nth-child(3), .address .add:nth-child(4){
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -200,7 +210,25 @@
 
 #modal .description a, #modal2 .description a, #modal3 .description a, #modal4 .description a, #modal5 .description a, #modal6 .description a,
 #modal7 .description a, #modal8 .description a{
-	margin-left:76px;
+	/*margin-left:76px;*/
+
+    border:1px solid #e5e5e5 !important;
+    display:inline-block !important;
+    cursor:pointer !important;
+    color:#ffffff !important;
+    font-family:Arial !important;
+    font-size:15px !important;
+    text-decoration:none !important;
+    text-shadow:0px 1px 0px #f51c0c !important;
+    text-transform: uppercase !important;
+
+    background-color:#e83629;
+    position: relative !important;
+    width: 120px !important;
+    padding: 10px 4px !important;
+    text-align: center !important;
+    margin-top: 25px !important;
+    clear: both !important;
 }
 
 #modal .description .opisanie, #modal2 .description .opisanie, #modal3 .description .opisanie, #modal4 .description .opisanie, #modal5 .description .opisanie,
@@ -243,16 +271,22 @@
     display:none;
 }
 
+.read_more{
+    position: absolute;
+    bottom: 55px;
+    right: 34%;
+}
 
 
-
-.myButton {
+.product-desc .myButton {
     /*-moz-box-shadow:inset 0px 39px 0px -24px #CA2424;
     -webkit-box-shadow:inset 0px 39px 0px -24px #CA2424;
     box-shadow:inset 0px 39px 0px -24px #CA2424;*/
     background-color:#e83629;
     /*background:linear-gradient(to bottom, #da1d1d, #910b0b);*/
     
+    width: 70%;
+    padding: 10px 0px;
     
     border:1px solid #e5e5e5;
     display:inline-block;
@@ -260,16 +294,21 @@
     color:#ffffff;
     font-family:Arial;
     font-size:15px;
-    padding:14px 37px 14px 41px;
+    /*padding:14px 37px 14px 41px;*/
     text-decoration:none;
     text-shadow:0px 1px 0px #f51c0c;
     text-transform: uppercase;
     
+    position: absolute;
+    bottom: 7px;
+    right: 15%;
+    /*margin-top: 21px;
+    position: relative;*/
     /*margin-right: 30px;
     margin-bottom: 5px !important;*/
-    position: absolute;
+    /*position: absolute;
     bottom:11px;
-    right:60px;
+    right:60px;*/
 
 
 }
@@ -277,6 +316,27 @@
     background-color:#fa4a3d;
     text-decoration: none;
     color:#fff;
+}
+
+
+.price_stock .myButton{
+    border:1px solid #e5e5e5 !important;
+    display:inline-block !important;
+    cursor:pointer !important;
+    color:#ffffff !important;
+    font-family:Arial !important;
+    font-size:15px !important;
+    text-decoration:none !important;
+    text-shadow:0px 1px 0px #f51c0c !important;
+    text-transform: uppercase !important;
+
+    background-color:#e83629;
+    position: relative !important;
+    width: 120px !important;
+    padding: 10px 4px !important;
+    text-align: center !important;
+    margin-top: 25px !important;
+    clear: both !important;
 }
 
 .description .myButton{
@@ -326,3 +386,49 @@ button.uk-modal-close, input[type="submit"]{
 .grecaptcha-badge{
 	display:none;
 }
+
+
+/*==============================================================Стили для кнопки "Наверх"=========================================*/
+
+#back-top {
+    position: fixed;
+    bottom: 30px;
+    right: 100px
+}
+#back-top a {
+    width: 108px;
+    display: block;
+    text-align: center;
+    font: 11px/100% Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #bbb;
+    /* transition */
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+#back-top a:hover {
+    color: #000;
+}
+/* arrow icon (span tag) */
+#back-top span {
+    width: 108px;
+    height: 108px;
+    display: block;
+    margin-bottom: 7px;
+    background: #ddd url(../images/up-arrow.png) no-repeat center center;
+    /* rounded corners */
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    /* transition */
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+#back-top a:hover span {
+    background-color: #777;
+}
+
+/*=========================================Стили для кнопки "Наверх"===============================================================*/
