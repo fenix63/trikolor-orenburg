@@ -162,10 +162,23 @@
                     $('.cards').fadeIn();
                 });
 
-                $('.change').on('click', function(){
+                /*$('.change').on('click', function(){
                     $('html, body').animate({
                         scrollTop: $("#exchange").offset().top - 100
                     }, 1000);
+                });*/
+
+                $('a.scrollTo').click(function(){
+                    var elementClick = $(this).attr("href");
+                    var destination = $(elementClick).offset().top+450;
+                    $('html,body').animate({scrollTop:destination},800);
+                    
+                });
+
+                $('.change .txt').on('click', function(){
+                    var elementClick = $('#reciever-actions');
+                    var destination = $(elementClick).offset().top+450;
+                    $('html,body').animate({scrollTop:destination},800);
                 });
 
                 // $('.fancybox-close-small').on('click', function(){
@@ -246,7 +259,7 @@
                 <img class="uk-margin-small-right" src="images/svg/logo-new.png"> </a>
                 <ul class="uk-navbar-nav uk-iconnav topmenu">
                     <li><a href="#"><span class="uk-icon uk-margin-small-right" href="#"></span>Главная</a></li>
-                      <li><a href="#action"><span class="uk-icon uk-margin-small-right" href=""></span>Акции по обмену </a></li>
+                      <li><a href="#reciever-actions" class="scrollTo"><span class="uk-icon uk-margin-small-right" href=""></span>Акции по обмену </a></li>
                       <li><a href="#obmen"><span class="uk-icon uk-margin-small-right" href="#"></span>Пункты обмена</a></li>
                 </ul>
                 </div>
@@ -354,9 +367,9 @@
     <div class="uk-container">
         <ul class="top-bxslider">
           <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="images/body/banner.jpg" /></a></li>
-          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="images/body/banner.jpg" /></a></li>
-          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="images/body/banner.jpg" /></a></li>
-          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="images/body/banner.jpg" /></a></li>
+          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="images/body/obmen.jpg" /></a></li>
+          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="images/body/199.jpg" /></a></li>
+          <li><a href="http://trikolor-orenburg.ru" target="_blank"><img src="images/body/obmen.jpg" /></a></li>
         </ul>
     </div>
 </div>
@@ -443,13 +456,12 @@
     	    </div>
     	    <div class="item_2">
     	        <div class="uk-card uk-card-default uk-card-body product">
-    		        <div class="product-photo"><img src="images/body/gs-b521l.jpg" width="216" height="163"></div>
+    		        <div class="product-photo"><img src="images/body/GS-C592-2.jpg" width="216" height="163"></div>
     		        
     		        <div class="product-desc">
-	    		        <div class="desc">
-	    		        	<span id="im-message-875184">Комплект:<br>1) Ресивер DTS-54<br> 2) Карта доступа 31 день</span><br/> 
+	    		        <div class="desc">Спутниковый ресивер-клиент Триколор ТВ GS-C592<br/> 
 	    		        	
-	   		          	</div>
+   		          	  </div>
 	    		        <div class="price">3 900 <span>руб</span>
 	    		        </div>
                         <a href="#modal2"  class="trigger read_more">подробнее</a>
@@ -468,12 +480,11 @@
     		        
     		        <div class="product-desc">
 	    		        <div class="desc">
-	    		        	Комплект: <br>
-	    		        	1)Двухтюнерный ресивер Триколор ТВ GS B-532 M<br>
-	    		        	 2) Cмарт карта 31 день<br/>
-	   		          	</div>
+	    		        	1) Ресивер DTS-54 <br>
+	    		        	 2) Cмарт карта 7 день<br/>
+   		          	  </div>
 	    		        <div class="price">
-	    		        	6 200 <span>руб</span>
+	    		        	3 900 <span>руб</span>
 	    		        </div>
 	    		        
                         <a href="#modal3"  class="trigger read_more">подробнее</a>
@@ -493,10 +504,11 @@
     		        
 
     		        <div class="product-desc">
-	    		        <div class="desc">Комплект:<br> 1) Двухтюнерный ресивер  Триколор ТВ GS B-532 M<br> 2) Cмарт карта на 7 дней<br/>
-	   		          	</div>
+	    		        <div class="desc">1) Двухтюнерный ресивер GS B-532M<br> 
+	    		          2) Cмарт карта на 7 дней<br/>
+   		          	  </div>
 	    		        <div class="price">
-	    		        	5 700 <span>руб</span>
+	    		        	5 900 <span>руб</span>
 	    		        </div>
 	    		        <div class="more">
 	    		        	
@@ -545,7 +557,8 @@
     		        
 
     		        <div class="product-desc">
-    		        <div class="desc">Комплект для двух телевизоров:<br> 1) Ресивер <span id="im-message-875186">GS B532M/GS C5911</span><br>2)Cкретч-карта SC на 7 дней &quot;Все пакеты&quot;<br>
+    		        <div class="desc">    		        1) Ресивер <span id="im-message-875186">GS B532M / GS C5911</span><br>
+    		          2)Cкретч-карта   7 дней<br>
 	              	</div>
     		        <div class="price">
     		        	9 000 <span>руб</span>
@@ -567,10 +580,11 @@
                     </div>
     		        
     		        <div class="product-desc">
-    		        <div class="desc">Комплект: <br>1)Ресивер <span id="im-message-875186">GS B211</span><br> 2)Cмарт карта 31 день<br>
+    		        <div class="desc">    		          1)Ресивер <span id="im-message-875186">GS B211</span><br> 
+    		          2)Cмарт карта 31 день<br>
 	        	  	</div>
     		        <div class="price">
-    		        	5 800 <span>руб</span>
+    		        	5 200 <span>руб</span>
     		        </div>
     		        <div class="more">
     		        	
@@ -593,7 +607,7 @@
     		        	CAM модуль Триколор CI+, в комплекте смарт-карта<br/>
    		          	</div>
     		        <div class="price">
-    		        	4 700 <span>руб</span>
+    		        	5 070 <span>руб</span>
     		        </div>
     		        
                     <a href="#modal8"  class="trigger read_more">подробнее</a>
@@ -631,7 +645,7 @@
               <div ><h2 class="uk-text-fsm">ПОЗВОНИТЕ НАШЕМУ КОНСУЛЬТАНТУ<br>И МЫ ПОМОЖЕМ ВАМ КУПИТЬ ИЛИ ОБМЕНЯТЬ <br> СПУТНИКОВОЕ ОБОРУДОВАНИЕ "ТРИКОЛОР ТВ"</h2>
                 <!--<h2 class="uk-text-fsm2">ТАТЬЯНА СКОРОСПЕЛОВА</h2>
                 <p>Старший менеджер по обмену "Триколор ТВ"</p>-->
-                <h2>8(3532)30-77-20</h2>
+                <h2>8 (3532) 30-77-20</h2>
               </div>
 
             </div>
@@ -656,79 +670,81 @@
         </h2>
 
         <div class="left-part uk-text-fsm">
-            В июне 2017 года крупнейший российский оператор цифрового телевидения «Триколор ТВ» ввел в коммерческую эксплуатацию пакет спортивных телеканалов «Премиум спорт». Услуга предназначена для корпоративных клиентов и включает восемь популярных телеканалов. Стоимость услуги для трансляции в публичных местах составляет 4500 руб. в месяц. «Премиум спорт»<br/> — новая услуга, предназначенная для корпоративных клиентов: владельцев гостиниц, спортивных баров, ресторанов, спортивных клубов и др. В пакет вошло восемь популярных спортивных телеканалов: «Матч! Арена HD», «Матч! Игра HD», «Матч! Наш спорт», «Матч! Боец», «Матч! Футбол 1 HD», «Матч! Футбол 2 HD», «Матч! Футбол 3 HD», «Наш футбол HD». 
+            <div align="justify">В июне 2017 года крупнейший российский оператор цифрового телевидения «Триколор ТВ» ввел в коммерческую эксплуатацию пакет спортивных телеканалов «Премиум спорт». Услуга предназначена для корпоративных клиентов и включает восемь популярных телеканалов. Стоимость услуги для трансляции в публичных местах составляет 4500 руб. в месяц. «Премиум спорт»<br/> 
+            — новая услуга, предназначенная для корпоративных клиентов: владельцев гостиниц, спортивных баров, ресторанов, спортивных клубов и др. В пакет вошло восемь популярных спортивных телеканалов: «Матч! Арена HD», «Матч! Игра HD», «Матч! Наш спорт», «Матч! Боец», «Матч! Футбол 1 HD», «Матч! Футбол 2 HD», «Матч! Футбол 3 HD», «Наш футбол HD». 
+            В современном мире, который сложно представить без гаджетов, «Триколор ТВ» можно подключить ко всем устройствам, которыми вы привыкли пользоваться. Смотрите любимые телеканалы на одном телевизоре или же подключите их также на втором, который стоит на кухне или в спальне. Кроме того, абонентам «Триколор ТВ» доступен просмотр каналов на планшете или смартфоне, а любителям игр понравится игровая консоль, совмещающая в себе игры и функции телесмотрения! «Триколор ТВ» - больше чем обычное телевидение!</div>
         </div>
         <div class="right-part uk-text-fsm">
-            В июне 2017 года крупнейший российский оператор цифрового телевидения «Триколор ТВ» ввел в коммерческую эксплуатацию пакет спортивных телеканалов «Премиум спорт». Услуга предназначена для корпоративных клиентов и включает восемь популярных телеканалов. Стоимость услуги для трансляции в публичных местах составляет 4500 руб. в месяц. «Премиум спорт»<br/> — новая услуга, предназначенная для корпоративных клиентов: владельцев гостиниц, спортивных баров, ресторанов, спортивных клубов и др. В пакет вошло восемь популярных спортивных телеканалов: «Матч! Арена HD», «Матч! Игра HD», «Матч! Наш спорт», «Матч! Боец», «Матч! Футбол 1 HD», «Матч! Футбол 2 HD», «Матч! Футбол 3 HD», «Наш футбол HD». 
+          <div align="justify">
+            <p>Обмен устаревшего оборудования, это - в несколько раз больше телеканалов!<br>
+          1. С новым приёмником вы сможете смотреть в 6 раз больше* каналов в отличном качестве!
+          Более 200 каналов пакета «Единый», среди которых десятки в HD и множество радиостанций,
+          в вашем полном распоряжении!<br>
+          2. Используйте все возможности вашего HD-телевизора! У вас есть HD–телевизор, но приёмник поддерживает только
+          SD–формат? Обменяйте оборудование и в полной мере оцените телевидение высокой чёткости! Однажды посмотрев
+          любимые фильмы и телепередачи в HD, вы больше не захотите возвращаться к старому формату.<br>
+          3. Подключайте дополнительные услуги! Мультфильмы, футбол или фильмы «18+»? Выберите пакеты телеканалов по интересам
+          и сделайте просмотр ТВ еще разнообразнее. <br>
+          4. Вы ничего не потеряете — все услуги и денежные средства будут перенесены на новое оборудование в полном объеме! 
+          Подписка на основной пакет каналов «Единый» и на все дополнительные пакеты, а также имеющиеся средства будут перенесены
+          на новое оборудование в полном объеме.</p>
+            <p>* При обмене оборудования формата MPEG-2.</p>
+          </div>
         </div>
 
-        <h2 class="uk-text-fsm uk-text-center change-actions">
+        <h2 class="uk-text-fsm uk-text-center change-actions" id="reciever-actions">
             акции по обмену ресиверов<br/> триколор тв
         </h2>
 
     </div>
 
     <div class="uk-container uk-container-center exchange">
-        <h2 class="uk-text-center">Обмен на один приёмник</h2>
+        <h2 class="uk-text-center" id="single-change">Обмен на один приёмник</h2>
         <div class="desc">
             В обмен на старое оборудование вы получите спутниковый двухтюнерный приёмник модели GS B521, GS B521(с USB-накопителем),  GS B533M или GS B531M.
         </div>
 
         <table border="1" cellspacing="0" cellpadding="0" bordercolor="#d0cdcd">
             <tr class="uk-text-fsm uk-text-center">
-                <th>Стоимость</th>
+                <th width="78">Стоимость</th>
                 <th colspan="4">Принимаемое к обмену оборудование</th>
             </tr>
             <tr>
                 <td class="price">за 3999 руб</td>
-                <td>
+                <td width="104">
                     <p>CAM-NC1</p>
                     <p>CAM-DRE (MPEG-2)</p>
                     <p>CAM-DRE (MPEG-4)*</p>
                     <p>Dongle DRE Crypt</p>
                     <p>DRE-4000</p>
-                </td>
-                <td>
+                    <p>GS-8300</p>
+                    <p>GS-8300M</p>
+              </td>
+                <td width="89">
                     <p>DRE-5000</p>
                     <p>DRS-5001</p>
                     <p>DRS-5003</p>
                     <p>DRE-7300</p>
                     <p>GS-7300</p>
-                </td>
-                <td>
+                    <p>GS-8300N</p>
+                    <p>GS 8302</p>
+              </td>
+                <td width="88">
                     <p>GS 8306</p>
                     <p>GS 8305</p>
                     <p>DRS 8305</p>
                     <p>GS 8307</p>
                     <p>GS 8308</p>
-                </td>
-                <td>
+              <p>GS 8304</p>
+              <p>GS-6301</p></td>
+                <td width="72">
+                    <p>DRS-8300</p>
                     <p>DRS 8308</p>
-                    <p>GS-6301</p>
                     <p>HD 9303</p>
                     <p>HD 9305</p>
-                </td>
+              </td>
             </tr>
-            <tr>
-                <td class="price">за 4799 руб</td>
-                <td>
-                    <p>GS-8300</p>
-                    <p>DRS-8300</p>
-                    <p>GS-8300M</p>
-                </td>
-                <td>
-                    <p>GS-8300N</p>
-                    <p>GS 8302</p>
-                    <p>GS 8304</p>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-            </tr>
+            
         </table>
 
         <div class="uk-container uk-container-center uk-text-center exchange-button">
@@ -746,58 +762,40 @@
 
         <table border="1" cellspacing="0" cellpadding="0" bordercolor="#d0cdcd">
             <tr class="uk-text-fsm uk-text-center">
-                <th>Стоимость</th>
+                <th width="78">Стоимость</th>
                 <th colspan="4">Принимаемое к обмену оборудование</th>
             </tr>
             <tr>
                 <td class="price">за 6499 руб</td>
-                <td>
+                <td width="101">
                     <p>CAM-NC1</p>
                     <p>CAM-DRE (MPEG-2)</p>
                     <p>CAM-DRE (MPEG-4)*</p>
                     <p>Dongle DRE Crypt</p>
                     <p>DRE-4000</p>
-                </td>
-                <td>
+                    <p>GS-8300</p>
+                    <p>DRS-8300</p></td>
+                <td width="96">
                     <p>DRE-5000</p>
                     <p>DRS-5001</p>
                     <p>DRS-5003</p>
                     <p>DRE-7300</p>
                     <p>GS-7300</p>
-                </td>
-                <td>
+                    <p>GS-8300M</p>
+                    <p>GS 8302</p></td>
+                <td width="80">
                     <p>GS 8306</p>
                     <p>GS 8305</p>
                     <p>DRS 8305</p>
                     <p>GS 8307</p>
                     <p>GS 8308</p>
-                </td>
-                <td>
+              <p>GS-8300N</p>
+              <p>GS 8304</p></td>
+                <td width="76">
                     <p>DRS 8308</p>
                     <p>GS-6301</p>
                     <p>HD 9303</p>
-                    <p>HD 9305</p>
-                </td>
-            </tr>
-            <tr>
-                <td class="price">за 7299 руб</td>
-                <td>
-                    <p>GS-8300</p>
-                    <p>DRS-8300</p>
-                    <p>GS-8300M</p>
-                </td>
-                <td>
-                    <p>GS-8300N</p>
-                    <p>GS 8302</p>
-                    <p>GS 8304</p>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
+                    <p>HD 9305</p>              </td>
             </tr>
         </table>
 
@@ -815,58 +813,42 @@
 
         <table border="1" cellspacing="0" cellpadding="0" bordercolor="#d0cdcd">
             <tr class="uk-text-fsm uk-text-center">
-                <th>Стоимость</th>
+                <th width="78">Стоимость</th>
                 <th colspan="4">Принимаемое к обмену оборудование</th>
             </tr>
             <tr>
                 <td class="price">за 3999 руб</td>
-                <td>
+                <td width="113">
                     <p>CAM-NC1</p>
                     <p>CAM-DRE (MPEG-2)</p>
                     <p>CAM-DRE (MPEG-4)*</p>
                     <p>Dongle DRE Crypt</p>
                     <p>DRE-4000</p>
-                </td>
-                <td>
+                    <p>GS-8300</p>
+                    <p>DRS-8300</p>
+                    </td>
+                <td width="88">
                     <p>DRE-5000</p>
                     <p>DRS-5001</p>
                     <p>DRS-5003</p>
                     <p>DRE-7300</p>
                     <p>GS-7300</p>
-                </td>
-                <td>
+                    <p>GS-8300N</p>
+                    <p>GS 8302</p>
+                    </td>
+                <td width="92">
+                    <p>GS 8304</p>
                     <p>GS 8306</p>
                     <p>GS 8305</p>
                     <p>DRS 8305</p>
                     <p>GS 8307</p>
                     <p>GS 8308</p>
-                </td>
-                <td>
+                <p>GS-8300M</p></td>
+                <td width="66">
                     <p>DRS 8308</p>
                     <p>GS-6301</p>
                     <p>HD 9303</p>
-                    <p>HD 9305</p>
-                </td>
-            </tr>
-            <tr>
-                <td class="price">за 4799 руб</td>
-                <td>
-                    <p>GS-8300</p>
-                    <p>DRS-8300</p>
-                    <p>GS-8300M</p>
-                </td>
-                <td>
-                    <p>GS-8300N</p>
-                    <p>GS 8302</p>
-                    <p>GS 8304</p>
-                    
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
+                    <p>HD 9305</p>                </td>
             </tr>
         </table>
 
@@ -878,44 +860,43 @@
 
     <div class="uk-container uk-container-center exchange">
         <h2 class="uk-text-center">Обмен в рассрочку</h2>
-        <div class="desc">
-            Всего 350 руб. в месяц за обмен приёмника вместе с абонентской платой за «Единый» в течение 24 месяцев. В период с 5 декабря 2016 года по 31 июля 2017 года при обмене старого оборудования по акции «Обмен „0“. Лайт» получи современный HD-приёмник с двумя тюнерами за 0 рублей*! Ежемесячный платёж составляет всего 350 рублей в месяц..
-        </div>
+        <div class="desc">Только в период со 2 октября по 31 октября 2017 года акция «Обмен. Сверхвыгодная рассрочка!»: всего 199 руб. в месяц за обмен вашего устаревшего приёмника на комплект современного оборудования с двухтюнерным приёмником вместе с абонентской платой за пакет «Единый» (в течение 25 месяцев). Настоящая рассрочка без переплат!</div>
 
         <table border="1" cellspacing="0" cellpadding="0" bordercolor="#d0cdcd">
             <tr class="uk-text-fsm uk-text-center">
-                <th>Стоимость</th>
+                <th width="118">Стоимость</th>
                 <th colspan="4">Принимаемое к обмену оборудование</th>
             </tr>
             <tr>
-                <td class="price">от 350 руб./месяц</td>
-                <td>
-                    <p>CAM-NC1</p>
-                    <p>CAM-DRE (MPEG-2)</p>
-                    <p>CAM-DRE (MPEG-4)*</p>
-                    <p>Dongle DRE Crypt</p>
-                    <p>DRE-4000</p>
-                </td>
-                <td>
-                    <p>DRE-5000</p>
-                    <p>DRS-5001</p>
-                    <p>DRS-5003</p>
-                    <p>DRE-7300</p>
-                    <p>GS-7300</p>
-                </td>
-                <td>
-                    <p>GS 8306</p>
-                    <p>GS 8305</p>
-                    <p>DRS 8305</p>
-                    <p>GS 8307</p>
-                    <p>GS 8308</p>
-                </td>
-                <td>
-                    <p>DRS 8308</p>
-                    <p>GS-6301</p>
-                    <p>HD 9303</p>
-                    <p>HD 9305</p>
-                </td>
+                <td class="price">от 199 руб./месяц</td>
+                <td width="162">
+                    <p>CAM DRE (MPEG-2)<br>
+                      CAM-NC1<br>
+                      Dongle<br>
+                      DRE 4000<br>
+                      DRE 5000/DRS-5001/DRS 5003<br>
+              DRE 7300/GS-7300</p>
+              </td>
+                <td width="119">
+                    <p>CAM DRE (MPEG-4)<br>
+                      GS 8300/M/N<br>
+                      DRS 8300<br>
+                      GS 8302<br>
+                    GS 8304 </p>
+              </td>
+                <td width="97">
+                    <p>DRS 8305<br>
+                      GS 8306<br>
+                      GS 8305<br>
+                      GS 8307<br>
+                    GS 8308</p>
+              </td>
+                <td width="103">
+                    <p>DRS 8308<br>
+                      GS 6301<br>
+                      HD 9303<br>
+                    HD 9305</p>
+              </td>
             </tr>
             
         </table>
@@ -1027,29 +1008,29 @@ GS-8300<br>
 	  <div class="add">
 			<h4>Фирменный салон магазин Триколор ТВ</h4>
 
-			 г.Оренбург ул. Терешковой д.22 офис.101, здание банка "Агросоюз"<br/>
+			 г. Оренбург, ул. Терешковой д. 22 офис. 101, здание банка "Агросоюз"<br/>
 			 Время работы<br/>
-			 Пн-Пт с 9.00 до 19.00<br/>
+			 Пн-Пт: с 9.00 до 19.00<br/>
 			 Сб-Вс с 10.00 до 16.00<br/>
-			т.+7(3532)30-77-20<br/>
+			т.:+7 (3532) 30-77-20<br/>
 			 
  		</div>
 										<div class="add">
 												<h4>Пункт продажи и обмена "Триколор ТВ"</h4>  
 												 г. Оренбург, ул. Юркина 11 А, кор. 2 (территория базы "ОренГалант")<br/>
 												Время работы<br/>
-												 Пн-Пт 9.00 - 18.00<br/>
+												 Пн-Пт: 9.00 - 18.00<br/>
 												 Сб 9.00 - 16.00<br/>
-												 т. +7 (3532) 66-23-33, 45-36-77<br/>
+												 т.: +7 (3532) 66-23-33, 45-36-77<br/>
 												 
 										</div>
 											<div class="add">
 												<h4>Пункт продажи и обмена "Триколор ТВ"</h4>
-												 г. Бузулук, ул. Комсомольская д.113Б<br/>
+												 г. Бузулук, ул. Комсомольская д. 113Б<br/>
 												 Время работы<br/>
-												  Пн-Пт 9.00 - 18.00<br/>
+												  Пн-Пт: 9.00 - 18.00<br/>
 												  Сб 9.00 - 16.00<br/>
-												  +7 905-844-95-28<br/>
+												  т.:+7-905-844-95-28<br/>
 												 
 												 
 											</div>
@@ -1148,7 +1129,9 @@ GS-8300<br>
   <div class="uk-grid-small uk-child-width-1-1 uk-grid" >
     <div>
       <div class="uk-card">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4b539b445d922e2c7acba6a3fd943f59267925851471cb7fa9e5fa396e37626d&amp;width=1088&amp;height=607&amp;lang=ru_RU&amp;scroll=true"></script>
+        <!--<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4b539b445d922e2c7acba6a3fd943f59267925851471cb7fa9e5fa396e37626d&amp;width=1088&amp;height=607&amp;lang=ru_RU&amp;scroll=true"></script>-->
+
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9ba6baaf26c4328c8e9ebaa9f3e4dacde8fb6f884f83c67a81bc6de02fa14f1a&amp;width=1088&amp;height=607&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
     </div>
     <div>

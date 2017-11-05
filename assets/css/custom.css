@@ -2,16 +2,97 @@
     display: none;
 }
 
+.topmenu li a{
+    color: #000;
+}
 
 .uk-section-default2 h1{
 	text-align:center;
 	color: #fff;
 }
 
+
+.gradient {
+    background-color: rgba(180, 164, 154, 0.5);
+    /* IE9, iOS 3.2+ */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxMDAlIiB5MT0iNTAlIiB4Mj0iMCUiIHkyPSI1MCUiPjxzdG9wIHN0b3AtY29sb3I9IiNmZmZiODUiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI2ZmZmI4NSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjNjk0Y2FmIiBzdG9wLW9wYWNpdHk9IjAiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNmZmZiODUiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+    background-image: -webkit-gradient(linear, 100% 50%, 0% 50%,color-stop(0, rgb(255, 251, 133)),color-stop(0, rgb(255, 251, 133)),color-stop(0, rgba(105, 76, 175, 0)),color-stop(1, rgb(255, 251, 133)));
+    /* Android 2.3 */
+    background-image: -webkit-repeating-linear-gradient(180deg,rgb(255, 251, 133) 0%,rgb(255, 251, 133) 0%,rgba(105, 76, 175, 0) 0%,rgb(255, 251, 133) 100%);
+    /* IE10+ */
+    background-image: repeating-linear-gradient(270deg,rgb(255, 251, 133) 0%,rgb(255, 251, 133) 0%,rgba(105, 76, 175, 0) 0%,rgb(255, 251, 133) 100%);
+    background-image: -ms-repeating-linear-gradient(180deg,rgb(255, 251, 133) 0%,rgb(255, 251, 133) 0%,rgba(105, 76, 175, 0) 0%,rgb(255, 251, 133) 100%);
+}
+ 
+/* IE8- CSS hack */
+@media \0screen\,screen\9 {
+    .gradient {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fffffb85",endColorstr="#fffffb85",GradientType=1);
+    }
+}
+
+
+
+.phone-number{
+    float: left;
+}
+
+.phone-top{
+    margin-right: 100px;
+    border-radius: 40px;
+    height: 44px;
+    color: #000;
+    cursor: pointer;
+    position: relative;
+}
+
+.phone-top button{
+    visibility: hidden;
+}
+
+.phone-top .show-phone{
+    font-size: 14px;
+}
+
+/*.phone-top .phone-shadow{
+    background-image: url(../images/phone-shadow2.png?3e1cd8);
+    background-repeat: no-repeat;
+    display: inline;
+    display: inline-block;
+    background-position: -512px -433px;
+    width: 36px;
+    height: 24px;
+    position: absolute;
+    right: 36px;
+}*/
+
 .address .add{
 	float:left;
 	width: 50%;
 	
+}
+
+.about_shop{
+    margin-top: 50px;
+}
+
+.about_shop h2{
+    text-transform: uppercase;
+}
+
+.about_shop .change-actions{
+    position: relative;
+    top:30px;
+}
+
+.right-part{
+    padding-left: 2%;
+}
+
+.left-part,.right-part{
+    float: left;
+    width: 48%;
+    font-size: 18px;
 }
 
 .blue-block{
@@ -43,6 +124,77 @@
 	color:#fff;
 }
 
+.exchange{
+    margin-top: 50px;
+    
+}
+
+.exchange h2{
+    color: red;
+    font-weight: bold;
+}
+
+.exchange-button{
+    margin-top: 50px;
+}
+
+.exchange table{
+    width: 100%;
+}
+
+.exchange table th{
+    font-size: 24px;
+    font-family: Myriad Pro, sans-serif;
+}
+
+.exchange table td p{
+    margin: 0;
+    padding: 0;
+}
+
+.exchange table tr{
+    text-align: center;
+
+}
+
+.exchange table tr td:nth-child(2),
+.exchange table tr td:nth-child(3),
+.exchange table tr td:nth-child(4),
+.exchange table tr td:nth-child(5){
+    text-align: left;
+    padding-left: 5%;
+    border-right-style: hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    vertical-align: top;
+}
+
+.exchange .price{
+    font-size: 24px;
+    font-family: Myriad Pro, sans-serif;
+}
+
+.exchange table tr td:nth-child(3),
+.exchange table tr td:nth-child(4),
+.exchange table tr td:nth-child(5){
+    border-left-style: hidden;
+}
+
+.exchange table tr td:nth-child(5){
+    border-right-style: solid;   
+}
+
+.exchange .desc{
+    text-transform: inherit;
+}
+
+.exchange table tr:first-child{
+    line-height: 52px;
+}
+
+#action{
+    display: none;
+}
 
 .change,.buy{
 	width:49%;
@@ -364,7 +516,7 @@
 }
 
 .bx-wrapper img{
-	padding-left: 90px;
+	/*padding-left: 90px;*/
 }
 
 #load,.load{
@@ -393,7 +545,8 @@ button.uk-modal-close, input[type="submit"]{
 #back-top {
     position: fixed;
     bottom: 30px;
-    right: 100px
+    right: 100px;
+    z-index: 9999;
 }
 #back-top a {
     width: 108px;

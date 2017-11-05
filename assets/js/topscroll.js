@@ -9,7 +9,7 @@ $(document).ready(function(){
         //alert($(document).scrollTop());
 
         $(window).scroll(function () {
-            console.log($(document).scrollTop());
+            
             if ($(this).scrollTop() > 100) {
                 $('#back-top').fadeIn();
             } else {
